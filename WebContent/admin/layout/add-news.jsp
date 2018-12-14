@@ -2,15 +2,19 @@
 
 
 <html>
+
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/library/ckeditor/ckeditor.js"></script>
 
 </head>
 <body>
-	<form action="getContent" method="get" style="padding: 30px;">
+	<form action="${pageContext.request.contextPath}/CRUDNews" method="POST" style="padding: 30px;" >
 		<h2 class="text-center mb-4">Bài viết mới</h2>
+		<!-- <input type="hidden" name="type" value="1"> -->
 		<div class="form-group">
+		<input type= "hidden" id="type" name="type" value="1">
 			<h5>Tiêu đề</h5>
 			<div class="input-group">
 
@@ -33,7 +37,7 @@
 				
 				<div class="input-group col-xs-12">
 					
-						<input class="file-upload-browse btn btn-info" value="Tải lên" type="file" >
+						<input class="file-upload-browse btn btn-info" value="Tải lên" type="file" name = "file">
 					</span>
 				</div>
 			</div>

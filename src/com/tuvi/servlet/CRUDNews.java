@@ -1,7 +1,9 @@
 package com.tuvi.servlet;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -10,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +29,8 @@ import com.tuvi.utils.DBUtil;
 @WebServlet("/CRUDNews")
 public class CRUDNews extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	  private final String UPLOAD_DIRECTORY = "${pageContext.request.contextPath}/admin/uploads";
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -62,8 +66,11 @@ public class CRUDNews extends HttpServlet {
 		
 		switch (type){
 			case 1: {
+				 Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
+				    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+				    InputStream fileContent = filePart.getInputStream();
 				//create
-				String image = request.getParameter("image");
+				String image = request.getParameter("content");
 				String content = request.getParameter("content");
 				String title = request.getParameter("title");
 				String seo = request.getParameter("seo");

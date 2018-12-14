@@ -2,10 +2,15 @@ package com.tuvi.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,6 +45,22 @@ public class CRUDRegisteredForm extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws ServletException
+			{
+			   try {
+				   System.out.println("vào");
+				request.setCharacterEncoding("UTF-8");
+				chain.doFilter(request, response);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			    catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -53,6 +74,7 @@ public class CRUDRegisteredForm extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		System.out.println("CRUDRegisteredForm doPost");
+		System.out.println("uft8 =" +request.getCharacterEncoding());
 		String stype = request.getParameter("type");
 		System.out.println("stype = " + stype);
 		if (stype == null) {
@@ -67,8 +89,10 @@ public class CRUDRegisteredForm extends HttpServlet {
 
 		switch (type) {
 		case 1: {
-			// create
-			String fullName = request.getParameter("fullName");
+			request.setCharacterEncoding("UTF-8");
+			// createURLDecoder.decode(request.getParameter("hiddenImput"), "UTF-8");
+			String fullName = URLDecoder.decode(request.getParameter("fullName"), "UTF-8");
+			System.out.println("fullName " +fullName);
 			String email = request.getParameter("email");
 			String phoneNumber = request.getParameter("phoneNumber");
 			String subject = request.getParameter("subject");
@@ -95,6 +119,9 @@ public class CRUDRegisteredForm extends HttpServlet {
 						DBConnection.getMySQLConnection(), registeredForm);
 				if (result == 1) {
 					out.print(ErrorCode.OK.code());
+						request.setAttribute("registeredSuccess", "1");
+					 response.sendRedirect("vi.jsp");
+					
 				} else {
 					out.print(ErrorCode.ERROR_OCCUR.code());
 				}

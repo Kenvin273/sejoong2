@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
-<html>
-<head>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/library/ckeditor/ckeditor.js"></script>
-
-</head>
-<body>
 	<form action="${pageContext.request.contextPath}/CRUDEvent" method="post" style="padding: 30px;">
 	<input type="hidden"  value="2" name="type" >
 		<input type="hidden" name="eventId"  value="<% out.print(request.getAttribute("id").toString());%>">
@@ -53,5 +47,3 @@
 	<script>
 		CKEDITOR.replace('editor');
 	</script>
-</body>
-</html>

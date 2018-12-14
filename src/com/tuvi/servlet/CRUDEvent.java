@@ -42,6 +42,10 @@ public class CRUDEvent extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		 response.setContentType("text/html; charset=UTF-8");
+		 System.out.println("CharacterEncoding GET = " + request.getCharacterEncoding());
+		 request.setCharacterEncoding("UTF-8");
+		 System.out.println("CharacterEncoding GET = " + request.getCharacterEncoding());
 		String type = request.getParameter("type").toString();
 		String id = request.getParameter("id").toString();
 		System.out.println(CRUDAdmin.permissionUser);
@@ -118,7 +122,10 @@ public class CRUDEvent extends HttpServlet {
 		int type = Integer.parseInt(stype);
 		System.out.println("CRUDEvent doPost");
 		System.out.println("CRUDEvent doPost type="+ type);
-		
+		System.out.println("CharacterEncoding = " + request.getCharacterEncoding());
+		request.setCharacterEncoding("UTF-8");
+		System.out.println("CharacterEncoding = " + request.getCharacterEncoding());
+		 request.getContentType();
 		int result = 0;
 		PrintWriter out = response.getWriter();
 		switch (type){
@@ -167,7 +174,7 @@ public class CRUDEvent extends HttpServlet {
 			}
 			case 2: {
 				//update
-				
+				//request.getCharacterEncoding();
 				String stimePlace = request.getParameter("timePlace");
 				String timePlaceOclock = request.getParameter("timePlaceOclock");
 				stimePlace =stimePlace + " " +timePlaceOclock;
