@@ -97,12 +97,12 @@
 									aria-expanded="false">Tùy chọn</button>
 								<div class="dropdown-menu">
 									<a class="dropdown-item"
-										href="${pageContext.request.contextPath}/CRUDEvent?id=<%out.print(ev.getNewsId());%>&type=edit-news">
+										href="${pageContext.request.contextPath}/CRUDNews?id=<%out.print(ev.getNewsId());%>&type=edit-news">
 										<i class="fa fa-reply fa-fw"></i>Sửa bài viết
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item"
-										href="${pageContext.request.contextPath}/CRUDEvent?id=<%out.print(ev.getNewsId());%>&type=delete-news"
+										href="${pageContext.request.contextPath}/CRUDNews?id=<%out.print(ev.getNewsId());%>&type=delete-news"
 										style="color: red;"> <i
 										class="fa fa-times text-danger fa-fw"></i>Xóa bài viết
 									</a>

@@ -57,7 +57,7 @@
 					<li class="nav-item"><a class="nav-link" href="#">Du học
 							hàn quốc</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath}/Pages?type=servies">Dịch
+						href="${pageContext.request.contextPath}/Pages?type=services">Dịch
 							vụ</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="${pageContext.request.contextPath}/Pages?type=introduce">Giới

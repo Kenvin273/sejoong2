@@ -12,26 +12,26 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="com.tuvi.utils.DBConnection"%>
 <%@page import="com.tuvi.utils.DBUtil"%>
-<%@page import="com.tuvi.dao.PartnerInfo"%>
+<%@page import="com.tuvi.dao.About"%>
 <div class="row">
 	<div class="col-12 grid-margin">
 		<div class="card">
 			<div class="card-body">
-				<h5 class="card-title mb-4">Danh sách đối tác</h5>
+				<h5 class="card-title mb-4">Danh sách nội dung giới thiệu</h5>
 				<form action="">
-					<button type="submit" class="btn btn-success mr-2" type="submit" value="add-partner" name ="type"
-						formaction="${pageContext.request.contextPath}/Layouts">Thêm đối tác</button>
+					<button type="submit" class="btn btn-success mr-2" type="submit" value="add-about" name ="type"
+						formaction="${pageContext.request.contextPath}/Layouts">Thêm bài viết</button>
 				
 				</form>	
 				<div class="fluid-container">
 					<!--------------------------------------------------------------------------------- -->
 					<%
 						try {
-							ArrayList<PartnerInfo> list = (ArrayList<PartnerInfo>) DBUtil
-									.queryPartnerInfo(DBConnection.getMySQLConnection());
+							ArrayList<About> list = (ArrayList<About>) DBUtil
+									.queryAbout(DBConnection.getMySQLConnection());
 							if (list.size() > 0) {
 								int i = 1;
-								for (PartnerInfo ev : list) {
+								for (About ev : list) {
 									try {
 					%>
 
@@ -51,7 +51,7 @@
 								
 								<p class="mb-0 ellipsis">
 									<%
-										out.print(ev.getPartnerName());
+										out.print(ev.getTitle());
 									%>
 								</p>
 							</div>
@@ -89,12 +89,12 @@
 									aria-expanded="false">Tùy chọn</button>
 								<div class="dropdown-menu">
 									<a class="dropdown-item"
-										href="${pageContext.request.contextPath}/CRUDPartner?id=<%out.print(ev.getPartnerId());%>&type=edit-partner">
+										href="${pageContext.request.contextPath}/CRUDAbout?id=<%out.print(ev.getId());%>&type=edit-about">
 										<i class="fa fa-reply fa-fw"></i>Sửa bài viết
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item"
-										href="${pageContext.request.contextPath}/CRUDPartner?id=<%out.print(ev.getPartnerId());%>&type=delete-partner"
+										href="${pageContext.request.contextPath}/CRUDAbout?id=<%out.print(ev.getId());%>&type=delete-about"
 										style="color: red;"> <i
 										class="fa fa-times text-danger fa-fw"></i>Xóa bài viết
 									</a>

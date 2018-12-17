@@ -13,7 +13,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="com.tuvi.utils.DBConnection"%>
 <%@page import="com.tuvi.utils.DBUtil"%>
-<%@page import="com.tuvi.dao.AdminAccount"%>
+<%@page import="com.tuvi.dao.*"%>
 
 <div class="content-wrapper">
 
@@ -50,7 +50,17 @@
 						<div class="float-right">
 							<p class="mb-0 text-right">Số đơn đăng ký</p>
 							<div class="fluid-container">
-								<h3 class="font-weight-medium text-right mb-0">8</h3>
+								<h3 class="font-weight-medium text-right mb-0">
+								<%try {
+											ArrayList<RegisteredForm> listRe = (ArrayList<RegisteredForm>) DBUtil
+													.queryRegisteredForm(DBConnection.getMySQLConnection());
+											out.print(listRe.size());
+										}catch (ClassNotFoundException | SQLException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+											out.print(-1);
+										}
+								 %></h3>
 							</div>
 						</div>
 					</div>
