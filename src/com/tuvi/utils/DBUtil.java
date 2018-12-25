@@ -443,7 +443,32 @@ public class DBUtil {
 		}
 		return list;
 	}
-	
+	public static List<Event> queryEventTookPlace(Connection conn, int firstResult, int maxResult) throws SQLException {
+		String sql = "Select * from event where TimePlace <= NOW()  limit ?,?";
+
+		PreparedStatement pstm = conn.prepareStatement(sql);
+		pstm.setInt(1, firstResult);
+		pstm.setInt(2, maxResult);
+		ResultSet rs = pstm.executeQuery();
+		List<Event> list = new ArrayList<Event>();
+		while (rs.next()) {
+			int eventId = rs.getInt("EventId");
+			Timestamp timePlace = rs.getTimestamp("TimePlace");
+			Timestamp timeCreated = rs.getTimestamp("TimeCreated");
+			String title = rs.getString("Title");
+			String content = rs.getString("Content");
+			String seo = rs.getString("Seo");
+			Event event = new Event();
+			event.setEvetnId(eventId);
+			event.setTimePlace(timePlace);
+			event.setTimeCreated(timeCreated);
+			event.setTitle(title);
+			event.setContent(content);
+			event.setSeo(seo);
+			list.add(event);
+		}
+		return list;
+	}
 	int __________________Fair__________________;
 
 	public static Fair getFair(Connection conn, //
