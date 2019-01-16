@@ -31,24 +31,24 @@
 						</div>
 					</form>
 					<div class="list-social">
-						<a href="vi/thu-vien-anh.html" class="text-link">Thư viện ảnh</a><a
-							href="vi/video.html" class="text-link video">Video</a><a
-							href="https://www.facebook.com/SEJOONG.vietnam" class="facebook"><i
+						<a href="vi/thu-vien-anh.jsp" class="text-link">Thư viện ảnh</a><a
+							href="vi/video.jsp" class="text-link video">Video</a><a
+							href="#" class="facebook"><i
 							class="fa fa-facebook"></i></a><a
-							href="https://twitter.com/SEJOONGVietnam" class="twitter"><i
+							href="#" class="twitter"><i
 							class="fa fa-twitter"></i></a><a
-							href="https://plus.google.com/u/0/+SEJOONGVietnam" class="google"><i
+							href="#" class="google"><i
 							class="fa fa-google-plus"></i></a><a
-							href="https://www.youtube.com/user/SEJOONGVietnam"
+							href="#"
 							class="youtube"><i class="fa fa-youtube"></i></a>
 					</div>
 					<ul class="language-switcher-locale-url">
-						<li class="vi first active"><a href="vi.html"
+						<li class="vi first active"><a href="vi.jsp"
 							class="language-link active" xml:lang="vi"><img
 								class="language-icon img-responsive" typeof="foaf:Image"
 								src="sites/all/modules/contrib/languageicons/flags/vi.png"
 								width="16" height="12" alt="Tiếng Việt" title="Tiếng Việt" /></a></li>
-						<li class="en last"><a href="en.html" class="language-link"
+						<li class="en last"><a href="#" class="language-link"
 							xml:lang="en"><img class="language-icon img-responsive"
 								typeof="foaf:Image"
 								src="sites/all/modules/contrib/languageicons/flags/en.png"
@@ -62,9 +62,9 @@
 				<div class="header-left col-xs-12 col-sm-8 col-lg-10">
 					<div class="row">
 						<div class="logo-warpper col-xs-12 col-sm-3 col-lg-3">
-							<a class="logo navbar-btn pull-left" href="vi.html"
+							<a class="logo navbar-btn pull-left" href="vi.jsp"
 								title="Trang chủ"> <img
-								src="sites/default/files/site_logo_custom/sejoong_edu_vn.png"
+								src="sites/default/files/site_logo_custom/logo.png"
 								alt="Trang chủ" />
 							</a>
 						</div>
@@ -94,38 +94,38 @@
 				<div class="navbar-collapse navbar-mobile-collapse collapse">
 					<nav role="navigation">
 					<ul class="menu nav navbar-nav">
-						<li class="first leaf active active"><a href="vi.html"
+						<li class="first leaf active active"><a href="vi.jsp"
 							title="" class="active">Trang chủ</a></li>
 						<li class="expanded expanded"><a
-							href="vi/gioi-thieu-chung.html" title="">Giới thiệu</a>
+							href="vi/gioi-thieu.jsp" title="">Giới thiệu</a>
 						<ul class="sub-menu">
 								<li class="first leaf"><a
-									href="vi/gioi-thieu/ve-chung-toi.html" title="Về chúng tôi">Về
+									href="vi/gioi-thieu/ve-chung-toi.jsp" title="Về chúng tôi">Về
 										chúng tôi</a></li>
 								<li class="leaf"><a
-									href="vi/gioi-thieu/tam-nhin-su-menh.html"
+									href="vi/gioi-thieu/tam-nhin-su-menh.jsp"
 									title="Tầm nhìn và Sứ mệnh">Tầm nhìn và Sứ mệnh</a></li>
-								<li class="leaf"><a href="vi/gioi-thieu/cac-dich-vu.html"
+								<li class="leaf"><a href="vi/gioi-thieu/cac-dich-vu.jsp"
 									title="Các Dịch vụ">Các Dịch vụ</a></li>
 								<li class="leaf"><a
-									href="vi/gioi-thieu/uu-tien-chien-luoc.html"
+									href="vi/gioi-thieu/uu-tien-chien-luoc.jsp"
 									title="Ưu tiên Chiến lược">Ưu tiên Chiến lược</a></li>
 								<li class="leaf"><a
-									href="vi/gioi-thieu/doi-ngu-quan-ly.html"
+									href="vi/gioi-thieu/doi-ngu-quan-ly.jsp"
 									title="Đội ngũ Quản lý">Đội ngũ Quản lý</a></li>
 								<li class="leaf"><a
-									href="vi/gioi-thieu/doi-ngu-co-van.html" title="Đội ngũ Cố vấn">Đội
+									href="vi/gioi-thieu/doi-ngu-co-van.jsp" title="Đội ngũ Cố vấn">Đội
 										ngũ Cố vấn</a></li>
 								<li class="leaf"><a
-									href="vi/gioi-thieu/chuong-trinh-doi-tac-tuyen-sinh.html"
+									href="vi/gioi-thieu/chuong-trinh-doi-tac-tuyen-sinh.jsp"
 									title="Chương trình Đối tác Tuyển sinh (RAP)">Chương trình
 										Đối tác Tuyển sinh (RAP)</a></li>
-								<li class="last leaf"><a href="vi/tuyen-dung.html">Tuyển
+								<li class="last leaf"><a href="vi/tuyen-dung.jsp">Tuyển
 										dụng</a></li>
 							</ul></li>
-						<li class="expanded expanded"><a href="vi/du-hoc-my.html"
+						<li class="expanded expanded"><a href="vi/du-hoc-han-quoc.jsp"
 							title="">Du học Hàn Quốc</a>
-						<ul class="sub-menu">
+						<!-- <ul class="sub-menu">
 								<li class="first expanded expanded"><a
 									href="vi/du-hoc-my.html" title="Mỹ">Mỹ</a>
 								<ul class="sub-menu">
@@ -195,17 +195,17 @@
 									</ul></li>
 								<li class="last leaf"><a href="vi/quoc-gia/58.html"
 									title="Úc">Úc</a></li>
-							</ul></li>
+							</ul> --></li>
 						<li class="expanded expanded"><a
-							href="vi/danh-sach-truong.html">Các trường đối tác</a>
+							href="vi/danh-sach-truong.jsp">Các trường đối tác</a>
 						<ul class="sub-menu">
 								<li class="first expanded expanded"><a
-									href="vi/danh-sach-truong3563.html?quoc-gia%5B%5D=7">Mỹ</a>
+									href="vi/han-quoc.jsp">Hàn quốc</a>
 								<ul class="sub-menu">
 										<li class="first leaf"><a
-											href="vi/danh-sach-truong4598.html?quoc-gia%5B%5D=7&amp;loai-truong%5B0%5D=10&amp;loai-truong%5B1%5D=11">Các
-												trường Trung học tại Mỹ</a></li>
-										<li class="leaf"><a
+											href="vi/index.jsp">Các
+												trường Trung học tại Hàn quốc</a></li>
+										<!-- <li class="leaf"><a
 											href="vi/danh-sach-truong59fc.html?quoc-gia%5B%5D=7&amp;loai-truong%5B%5D=27">Các
 												trường Cao đẳng tại Mỹ</a></li>
 										<li class="leaf"><a
@@ -213,9 +213,9 @@
 												trường Đại học tại Mỹ</a></li>
 										<li class="last leaf"><a
 											href="vi/danh-sach-truong1ec4.html?quoc-gia%5B%5D=7&amp;loai-truong%5B%5D=29">Các
-												trung tâm tiếng Anh tại Mỹ</a></li>
+												trung tâm tiếng Anh tại Mỹ</a></li> -->
 									</ul></li>
-								<li class="expanded expanded"><a
+								<!-- <li class="expanded expanded"><a
 									href="vi/danh-sach-truong7bdf.html?quoc-gia%5B%5D=8">Anh</a>
 								<ul class="sub-menu">
 										<li class="first leaf"><a
@@ -246,7 +246,7 @@
 										<li class="last leaf"><a
 											href="vi/danh-sach-truongf165.html?quoc-gia%5B%5D=9&amp;loai-truong%5B%5D=29">Các
 												trung tâm tiếng Anh tại Canada</a></li>
-									</ul></li>
+									</ul></li> -->
 								<li class="last leaf"><a
 									href="vi/dang-ky-tu-van-du-hoc.html">Đăng ký Tư vấn Du học</a></li>
 							</ul></li>

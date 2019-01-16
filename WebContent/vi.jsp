@@ -15,14 +15,7 @@
 <body class="html front not-logged-in no-sidebars page-node i18n-vi">
 	<!-- Google Tag Manager (noscript) -->
 	
-	<%
-	request.setCharacterEncoding("UTF-8");
-	response.setCharacterEncoding("UTF-8");
-	if(request.getAttribute("registeredSuccess")!= null){
-		
-	%>
 	
-	<%}	 %>
 	<noscript>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LFBZ8M"
 			height="0" width="0" style="display: none; visibility: hidden"></iframe>
@@ -40,9 +33,9 @@
 					<div class="form-wrap">
 						<div class="form-title">Đăng ký tư vấn</div>
 						<div id="webform-ajax-wrapper-117">
-							<form class="webform-client-form webform-client-form-117"
-								action="${pageContext.request.contextPath}/CRUDRegisteredForm" method="post"
-								id="webform-client-form-117" accept-charset="UTF-8">
+							 <form class="webform-client-form webform-client-form-117"
+								
+								id="webform-client-form-117" accept-charset="UTF-8"> 
 								<div>
 									<div class="webform-progressbar">
 										<div class="webform-progressbar-outer">
@@ -143,11 +136,11 @@
 									<div class="form-actions">
 										<button
 											class="webform-submit button-primary btn btn-default form-submit"
-											type="submit" id="submitSentRegistered" name="submitSentRegistered"
+											type="button" id="submitSentRegistered" name="submitSentRegistered"
 											value="Đăng ký">Đăng ký</button>
 									</div>
 								</div>
-							</form>
+							</form> 
 						</div>
 					</div>
 				</div>
@@ -164,7 +157,7 @@
 									alt="Chào mừng đến với SEJOONG Education"
 									title="Chào mừng đến với SEJOONG Education" />
 							</a></li>
-							<li><a href="vi/SEJOONG-scholars.html" target="_blank">
+							<!-- <li><a href="vi/SEJOONG-scholars.html" target="_blank">
 									<img typeof="foaf:Image" class="img-responsive"
 									src="sites/default/files/image/banner/banner3.png"
 									width="2000" height="500" alt="SEJOONG Scholars"
@@ -187,7 +180,7 @@
 									typeof="foaf:Image" class="img-responsive"
 									src="sites/default/files/image/banner/banner2.png" width="2000"
 									height="500" alt="" />
-							</a></li>
+							</a></li> -->
 						</ul>
 					</div>
 				</div>
@@ -599,6 +592,27 @@
 	
 	
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#submitSentRegistered").click(function() {
+		
+		alert(1);
+		$.ajax({
+			  type: "POST",
+			  url: "${pageContext.request.contextPath}/Test",
+			  data: {
+				  abc: "abc",
+				  otp: "ê á"
+			  },
+			  success: function(data){
+				  console.log(data);
+				  alert("success: " + data);
+				  /* window.location.reload(); */
+			  }
+			});
+	});
+});
+</script>
 <!-- Mirrored from SEJOONG.edu.vn/vi by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Nov 2018 14:49:13 GMT -->
 </html>
